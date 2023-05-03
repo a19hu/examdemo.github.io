@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAM</title>
+    <link rel="stylesheet" href="exam.css">
+</head>
+<body>
+    
+   <div class="container">
+     <header class="head"> <h1>SEMESTER 2</h1>
+    <div>
+        <form action="" class="form" method="main" name="submit-to-google-sheet">
+            Semester: <select name="semester" id="option"  required>
+                <option >1</option>
+                <option >2</option>
+                <option >3</option>
+                 <option >4</option>
+                <option >5</option>
+               
+                <option >6</option>
+                <option >7</option>
+                <option >8</option>
+            </select><br>
+
+            Your name:<br><input class="number" type="text" placeholder="First and last name" name="name" required><br>
+            Roll number:<br><input class="number" type="text" placeholder="Roll number" name="name" required><br>
+            <select name="exam" id="option" required>
+                <option >Exam Name</option>
+                <option >Minor1</option>
+                <option >Minor2</option>
+                 <option >quiz1</option>
+                <option >Major</option>
+               
+                <option >quiz2</option>
+                <option >quiz3</option>
+            </select>
+            <br>
+            <select name="subject" id="option" required>
+                <option >Subject name</option>
+                <option >IB</option>
+                <option >IC</option>
+                 <option >IE</option>
+                <option >IC LAB</option>
+               
+                <option >IE LAB</option>
+                <option >MATH</option>
+                <option >EO</option>
+                <option >EM</option>
+                 <option >CHEMISTRY</option>
+                <option >CHEMISTRY LAB</option>
+               
+                <option >PHYSICS LAB</option>
+            </select>
+           <br>
+           <br>
+           Marks:<br><input class="number" type="decimal" placeholder="marks" name="marks" required><br>
+          Total Marks:<br><input class="number" type="number" placeholder="marks" name="marks" required><br>
+            <button class="continue" name="button">continue</button>
+            <hr>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere, possimus? Ex consequuntur facere nemo incidunt illo sit minus magni adipisci assumenda, a animi fuga! Odio quae facere modi? Nisi, aliquam!</p>
+          <hr>
+        <span id="success"></span>
+    </form>
+</div>
+   </div>
+   
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwv8ddsJ3FWjtiaYGipyB1ayrJ44BQJR25I9K9Unthrtply8LI0JV2oWr49n9UxGDUS/exec'
+            const form = document.forms['submit-to-google-sheet']
+          const success = document.getElementById('success')
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response =>{
+success.innerHTML="data successfully submit";
+
+setTimeout(function()
+{
+    success.innerHTML="";
+},2000)
+form.reset();
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+    </script>
+</body>
+</html>

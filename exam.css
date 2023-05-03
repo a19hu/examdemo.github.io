@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:white;
+    position: fixed;
+    
+    color: rgb(3, 3, 3);
+
+}
+h1{
+    text-align: left;
+}
+.form{
+    margin: 5px;
+}
+.form input{
+    margin: 10px;
+   
+    width: 78%;
+    margin-left: 10%;
+}
+.continue{
+    width: 80%;
+    margin-left: 10%;
+    background-color: #aa0e25;
+   height: 30px;
+   margin-top: 10px;
+}
+.continue:hover{
+    cursor: pointer;
+    background-color: #e88080;
+}
+
+.container{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #b1bdbeda;
+    width: 20%;
+    margin: 20px 40% ;
+}
+#option{
+    margin: 10px 10%;
+    width:80% ;
+}
